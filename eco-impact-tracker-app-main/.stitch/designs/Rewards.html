@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Space+Grotesk:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-highest": "#e0e3e5",
+            "surface-variant": "#e0e3e5",
+            "surface-tint": "#2b6954",
+            "primary-fixed-dim": "#95d3ba",
+            "surface-dim": "#d8dadc",
+            "primary": "#003527",
+            "on-error-container": "#93000a",
+            "secondary": "#006a61",
+            "on-primary": "#ffffff",
+            "primary-fixed": "#b0f0d6",
+            "on-tertiary-fixed-variant": "#294e3f",
+            "inverse-primary": "#95d3ba",
+            "primary-container": "#064e3b",
+            "on-tertiary-container": "#93baa7",
+            "outline-variant": "#bfc9c3",
+            "tertiary": "#0e3427",
+            "on-primary-fixed-variant": "#0b513d",
+            "outline": "#707974",
+            "error-container": "#ffdad6",
+            "error": "#ba1a1a",
+            "on-error": "#ffffff",
+            "secondary-fixed-dim": "#6bd8cb",
+            "on-secondary-container": "#006f66",
+            "on-secondary-fixed": "#00201d",
+            "surface-container-high": "#e6e8ea",
+            "on-primary-container": "#80bea6",
+            "tertiary-container": "#274b3c",
+            "on-primary-fixed": "#002117",
+            "tertiary-fixed-dim": "#a8cfbc",
+            "on-tertiary": "#ffffff",
+            "background": "#f7f9fb",
+            "on-background": "#191c1e",
+            "inverse-on-surface": "#eff1f3",
+            "tertiary-fixed": "#c3ecd7",
+            "surface-container": "#eceef0",
+            "on-secondary": "#ffffff",
+            "surface": "#f7f9fb",
+            "surface-bright": "#f7f9fb",
+            "secondary-container": "#86f2e4",
+            "secondary-fixed": "#89f5e7",
+            "on-surface": "#191c1e",
+            "on-secondary-fixed-variant": "#005049",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f2f4f6",
+            "on-tertiary-fixed": "#002115",
+            "on-surface-variant": "#404944",
+            "inverse-surface": "#2d3133"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "grid-columns": "12",
+            "stack-md": "16px",
+            "gutter": "24px",
+            "stack-sm": "8px",
+            "base": "4px",
+            "stack-lg": "32px",
+            "margin-page": "48px"
+          },
+          "fontFamily": {
+            "display": ["Inter"],
+            "h2": ["Inter"],
+            "label-sm": ["Inter"],
+            "mono-data": ["Space Grotesk"],
+            "body-lg": ["Inter"],
+            "body-md": ["Inter"],
+            "h1": ["Inter"]
+          },
+          "fontSize": {
+            "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "h2": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "label-sm": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "500"}],
+            "mono-data": ["14px", {"lineHeight": "1.2", "fontWeight": "500"}],
+            "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+            "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+            "h1": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.015em", "fontWeight": "600"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .glass-card {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(6, 78, 59, 0.1);
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
+</head>
+<body class="bg-background font-body-md text-on-background antialiased">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-screen w-64 border-r border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 flex flex-col py-6 px-4 gap-2 z-50">
+<div class="mb-8 px-2 flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined">nature_people</span>
+</div>
+<div>
+<h2 class="text-lg font-black text-emerald-900 dark:text-emerald-50 leading-tight">Sustainability AI</h2>
+<p class="text-xs text-slate-500 font-medium">Institutional ESG</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors rounded-lg font-inter text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+        Dashboard
+      </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors rounded-lg font-inter text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span>
+        Leaderboard
+      </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors rounded-lg font-inter text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="tips_and_updates">tips_and_updates</span>
+        Suggestions
+      </a>
+<a class="flex items-center gap-3 px-4 py-3 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-800 dark:text-emerald-200 rounded-lg font-inter text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="military_tech">military_tech</span>
+        Rewards
+      </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors rounded-lg font-inter text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+        Profile
+      </a>
+</nav>
+<button class="mt-auto mx-2 py-3 px-4 text-xs font-bold uppercase tracking-wider text-error hover:bg-error/5 rounded-lg transition-all active:scale-95 text-center">
+      Reset Data
+    </button>
+</aside>
+<!-- TopAppBar -->
+<header class="fixed top-0 right-0 left-64 h-16 z-40 bg-white/70 dark:bg-slate-900/70 backdrop-blur-lg border-b border-emerald-500/10 dark:border-emerald-500/20 shadow-[0_20px_50px_rgba(6,78,59,0.04)] flex items-center justify-between px-8">
+<h1 class="text-xl font-bold tracking-tight text-emerald-900 dark:text-emerald-50 font-inter antialiased">Restorative Intelligence</h1>
+<div class="flex items-center gap-6">
+<div class="hidden lg:flex items-center gap-2 px-4 py-1.5 bg-emerald-50/50 rounded-full border border-emerald-100">
+<span class="material-symbols-outlined text-emerald-600 text-sm" style="font-variation-settings: 'FILL' 1;">savings</span>
+<span class="text-sm font-mono-data text-emerald-900 font-semibold">Gold Balance: ₹4,250.00</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="text-right">
+<p class="text-xs font-bold text-slate-900">Jane Doe</p>
+<p class="text-[10px] text-slate-500 font-medium">ESG ANALYST</p>
+</div>
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center text-xs font-bold border-2 border-white shadow-sm overflow-hidden">
+<img alt="User Initials JD" class="w-full h-full object-cover" data-alt="close-up portrait of a professional woman with a friendly expression in a corporate setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoHX3CvREO7juFmVU3PHk4OWkyCI9OT_Iyiu1VzrPWaJFnRjVprNUyx4aMBGBlzZhKak4Z6SYQ2TDjmRHeP8bH7WHqtmgN-Y7G3IuNNu6XApDtlt-03ndxhm7l6CYfGvCOcX9CG09BO1jxSVOl9XhPzG7wnsscCOI961BxGDFJ87KBS6bVK8BG69CnusHj1Dab_ski0U7uAsk43zlJEnWiVmDDH0-GTwaamsuUH0ATov3ZXAYB6DOgnCtcy06ViNEc2MAcSDoOQqDU"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="ml-64 pt-24 pb-12 px-8 min-h-screen">
+<div class="max-w-6xl mx-auto space-y-12">
+<!-- Impact Header Section -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="md:col-span-2 glass-card rounded-3xl p-8 flex flex-col justify-between relative overflow-hidden">
+<div class="relative z-10">
+<h2 class="font-h1 text-h1 text-primary mb-2">Your Impact Journey</h2>
+<p class="text-body-md text-on-surface-variant max-w-lg">You've mitigated <span class="font-bold text-emerald-700">12.4 tons of CO2</span> this quarter. You are in the top 5% of restorative investors.</p>
+</div>
+<div class="mt-8 flex items-end gap-8 relative z-10">
+<div class="flex flex-col">
+<span class="text-mono-data text-emerald-800 font-bold text-2xl">A+</span>
+<span class="text-[10px] uppercase tracking-widest font-bold text-slate-500">ESG Score</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-center mb-2">
+<span class="text-xs font-bold text-slate-600">Progress to Net Zero Hero</span>
+<span class="text-xs font-mono-data text-emerald-700">85%</span>
+</div>
+<div class="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-emerald-500 to-teal-400 rounded-full" style="width: 85%;"></div>
+</div>
+</div>
+</div>
+<!-- Decorative element -->
+<div class="absolute top-[-20%] right-[-10%] w-64 h-64 bg-emerald-50/50 rounded-full blur-3xl -z-0"></div>
+</div>
+<div class="glass-card rounded-3xl p-8 flex flex-col items-center justify-center text-center space-y-4 border-dashed border-2">
+<div class="w-20 h-20 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">eco</span>
+</div>
+<div>
+<h3 class="font-h2 text-h2 text-primary">Carbon Credits</h3>
+<p class="text-mono-data text-3xl font-bold text-secondary">2,840</p>
+</div>
+<button class="w-full py-3 bg-primary text-on-primary rounded-xl font-bold text-sm hover:opacity-90 transition-all active:scale-95">
+            Redeem Assets
+          </button>
+</div>
+</section>
+<!-- Unlocked Badges Component -->
+<section>
+<div class="flex items-center justify-between mb-6">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">verified</span>
+<h3 class="font-h2 text-h2 text-primary">Verified Achievements</h3>
+</div>
+<button class="text-sm font-bold text-secondary flex items-center gap-1 hover:underline">
+            View All <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+<!-- Badge Item (Unlocked) -->
+<div class="glass-card rounded-2xl p-4 flex flex-col items-center group cursor-help relative">
+<div class="w-16 h-16 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-700 transition-transform group-hover:scale-110">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">forest</span>
+</div>
+<p class="mt-3 text-xs font-bold text-slate-800 text-center">Forest Guardian</p>
+<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 p-3 bg-slate-900 text-white rounded-xl text-[11px] leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-20 shadow-xl">
+<p class="font-bold mb-1">Forest Guardian</p>
+              Unlocked for contributing to the reforestation of 500+ indigenous saplings.
+              <div class="absolute bottom-[-4px] left-1/2 -translate-x-1/2 w-2 h-2 bg-slate-900 rotate-45"></div>
+</div>
+</div>
+<!-- Badge Item (Unlocked) -->
+<div class="glass-card rounded-2xl p-4 flex flex-col items-center group cursor-help relative">
+<div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center text-blue-700 transition-transform group-hover:scale-110">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">water_drop</span>
+</div>
+<p class="mt-3 text-xs font-bold text-slate-800 text-center">Blue Ocean</p>
+<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 p-3 bg-slate-900 text-white rounded-xl text-[11px] leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-20 shadow-xl">
+<p class="font-bold mb-1">Blue Ocean</p>
+              Awarded for funding marine biodiversity protection projects.
+              <div class="absolute bottom-[-4px] left-1/2 -translate-x-1/2 w-2 h-2 bg-slate-900 rotate-45"></div>
+</div>
+</div>
+<!-- Badge Item (Locked/Grayscale) -->
+<div class="glass-card rounded-2xl p-4 flex flex-col items-center opacity-40 grayscale group cursor-help relative">
+<div class="w-16 h-16 rounded-full bg-slate-200 flex items-center justify-center text-slate-500">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">electric_bolt</span>
+</div>
+<p class="mt-3 text-xs font-bold text-slate-800 text-center">Solar Sage</p>
+<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 p-3 bg-slate-900 text-white rounded-xl text-[11px] leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-20 shadow-xl">
+<p class="font-bold mb-1">Locked Achievement</p>
+              Requires 5.0 tCO2 reduction from renewable energy sources.
+              <div class="absolute bottom-[-4px] left-1/2 -translate-x-1/2 w-2 h-2 bg-slate-900 rotate-45"></div>
+</div>
+</div>
+<!-- Badge Item (Unlocked) -->
+<div class="glass-card rounded-2xl p-4 flex flex-col items-center group cursor-help relative">
+<div class="w-16 h-16 rounded-full bg-amber-100 flex items-center justify-center text-amber-700 transition-transform group-hover:scale-110">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">landscape</span>
+</div>
+<p class="mt-3 text-xs font-bold text-slate-800 text-center">Peak Purifier</p>
+<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 p-3 bg-slate-900 text-white rounded-xl text-[11px] leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-20 shadow-xl">
+<p class="font-bold mb-1">Peak Purifier</p>
+              High-altitude air quality restoration achievement.
+              <div class="absolute bottom-[-4px] left-1/2 -translate-x-1/2 w-2 h-2 bg-slate-900 rotate-45"></div>
+</div>
+</div>
+<!-- Badge Item (Locked/Grayscale) -->
+<div class="glass-card rounded-2xl p-4 flex flex-col items-center opacity-40 grayscale group cursor-help relative">
+<div class="w-16 h-16 rounded-full bg-slate-200 flex items-center justify-center text-slate-500">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">recycling</span>
+</div>
+<p class="mt-3 text-xs font-bold text-slate-800 text-center">Cycle Master</p>
+<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 p-3 bg-slate-900 text-white rounded-xl text-[11px] leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-20 shadow-xl">
+<p class="font-bold mb-1">Locked Achievement</p>
+              Requires participation in 10 circular economy projects.
+              <div class="absolute bottom-[-4px] left-1/2 -translate-x-1/2 w-2 h-2 bg-slate-900 rotate-45"></div>
+</div>
+</div>
+<!-- Badge Item (Locked/Grayscale) -->
+<div class="glass-card rounded-2xl p-4 flex flex-col items-center opacity-40 grayscale group cursor-help relative">
+<div class="w-16 h-16 rounded-full bg-slate-200 flex items-center justify-center text-slate-500">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">wind_power</span>
+</div>
+<p class="mt-3 text-xs font-bold text-slate-800 text-center">Aero Scout</p>
+<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 p-3 bg-slate-900 text-white rounded-xl text-[11px] leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-20 shadow-xl">
+<p class="font-bold mb-1">Locked Achievement</p>
+              Fund a wind turbine installation to unlock.
+              <div class="absolute bottom-[-4px] left-1/2 -translate-x-1/2 w-2 h-2 bg-slate-900 rotate-45"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Rewards Bento Grid -->
+<section>
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">card_giftcard</span>
+<h3 class="font-h2 text-h2 text-primary">Unlockable Rewards</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Reward Card 1 -->
+<div class="glass-card rounded-3xl overflow-hidden flex flex-col group border border-emerald-500/10">
+<div class="h-40 overflow-hidden">
+<img alt="Green Energy Facility" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="modern green energy park with sleek wind turbines and solar panels under a clear blue sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZBxXRWt2ENTBcDz1JvK5ERIW5pPyOFUaDHLyixZuVMymrdxp6PcZ4qB0t3ZNp8BYZOd_9aH_dd3HpvX2cK9Eobx6WliO8JYhYhJ1Fw5yeV7v0DGCHgeW2m-mUzGjkgNsBEO2aa6iiz4rUjAWCJhFy9CELNwff338rwjn-mQYZzP6Wz6dOh1BEIv9wO0rGqY_YQe2eKBlXNY7PFdtewdluqqBPJGbOrzmhAHf8gbxmNpk3UHjWNu6cn-SUEZaDzE95UDwTCJIlEUiu"/>
+</div>
+<div class="p-6 flex-1 flex flex-col">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h4 class="font-bold text-lg text-slate-900">Carbon Neutral Travel</h4>
+<p class="text-xs text-slate-500 font-medium">Premium Flight Offsets</p>
+</div>
+<div class="px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full text-[10px] font-bold border border-emerald-100">RARE</div>
+</div>
+<div class="mt-auto space-y-4">
+<div class="flex items-center justify-between text-xs font-bold text-slate-600">
+<span>Requirement: 5.0t CO2</span>
+<span class="text-emerald-700">75% Complete</span>
+</div>
+<div class="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
+<div class="h-full bg-emerald-500 rounded-full" style="width: 75%;"></div>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="text-mono-data text-sm font-bold text-slate-400">3.75 / 5.0 tCO2</span>
+<button class="px-4 py-2 bg-slate-100 text-slate-400 rounded-lg text-xs font-bold cursor-not-allowed">Locked</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Reward Card 2 -->
+<div class="glass-card rounded-3xl overflow-hidden flex flex-col group border border-emerald-500/20 shadow-lg shadow-emerald-500/5">
+<div class="h-40 overflow-hidden">
+<img alt="Sustainable Lifestyle" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="lush green leaves and plants in a minimalist eco-friendly interior with soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAz9cMH1tlh4JVTENMlaT0t4x91WIv4FyF7vLYh-39_oc2YbT0didG-Wu-_qeSeNiJgQ-vBgpZdzEJ4Qs5dQjlTjIk_ypOLRqaXxEvkY4es4O1972utAoO_VJ98tacJIXw-qcr6F3BcTWqP3Gj-w_8kUWVRcunpGE644q8zUwQ1-P0najPa2M-qisTVYJpyRbgDURex0tCHcptS7ZRR4soLx18FgV1GxVgc5tp64TWXyhbihR9wsatbXDKGMllgRAPGNlfDBl0l21Ju"/>
+</div>
+<div class="p-6 flex-1 flex flex-col">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h4 class="font-bold text-lg text-slate-900">Eco-Retreat Voucher</h4>
+<p class="text-xs text-slate-500 font-medium">Restorative Getaway</p>
+</div>
+<div class="px-3 py-1 bg-amber-50 text-amber-700 rounded-full text-[10px] font-bold border border-amber-100">LEGENDARY</div>
+</div>
+<div class="mt-auto space-y-4">
+<div class="flex items-center justify-between text-xs font-bold text-slate-600">
+<span>Requirement: 12.0t CO2</span>
+<span class="text-emerald-700 font-black">Unlocked!</span>
+</div>
+<div class="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
+<div class="h-full bg-emerald-500 rounded-full" style="width: 100%;"></div>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="text-mono-data text-sm font-bold text-emerald-600">12.4 / 12.0 tCO2</span>
+<button class="px-4 py-2 bg-primary text-on-primary rounded-lg text-xs font-bold hover:scale-105 transition-all">Claim Now</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Reward Card 3 -->
+<div class="glass-card rounded-3xl overflow-hidden flex flex-col group border border-emerald-500/10">
+<div class="h-40 overflow-hidden">
+<img alt="Smart City Infrastructure" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="modern eco-friendly city architecture with vertical gardens and clean integrated technology during twilight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3v-KXrXT-B968pZX0QAnj-vz1Q0qU2CtAFkIPurmSXk8ZTMA6yhwzTehcG8Xo2i2LTafVT9GQPM_TP5HUGKwDWXU1YljLX-6vkVZK_c_CbRCzVB6JlBS-EpJErR45ZieI174uzaZU2VAZ2Y1hPulLHMCp5k55K_2MawR9zOQCcpHM-1KhyH_Jd9jT0JunxZ1Dwtxk7bbZYPPELt5UkawzOPxCkg3or3cZW6oFZk1GEotD2z2-YwNea2tAHCBXFvWpqf6MotoHhPd5"/>
+</div>
+<div class="p-6 flex-1 flex flex-col">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h4 class="font-bold text-lg text-slate-900">Smart Energy Monitor</h4>
+<p class="text-xs text-slate-500 font-medium">IoT Home Hardware</p>
+</div>
+<div class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-[10px] font-bold border border-slate-200">COMMON</div>
+</div>
+<div class="mt-auto space-y-4">
+<div class="flex items-center justify-between text-xs font-bold text-slate-600">
+<span>Requirement: 2.5t CO2</span>
+<span class="text-emerald-700">40% Complete</span>
+</div>
+<div class="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
+<div class="h-full bg-emerald-500 rounded-full" style="width: 40%;"></div>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="text-mono-data text-sm font-bold text-slate-400">1.0 / 2.5 tCO2</span>
+<button class="px-4 py-2 bg-slate-100 text-slate-400 rounded-lg text-xs font-bold cursor-not-allowed">Locked</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- AI Insights Banner -->
+<section class="rounded-3xl p-8 bg-gradient-to-r from-emerald-50 to-white border border-emerald-100 flex items-center gap-8 shadow-sm">
+<div class="w-16 h-16 rounded-2xl bg-white flex items-center justify-center shadow-inner">
+<span class="material-symbols-outlined text-emerald-600 text-3xl">auto_awesome</span>
+</div>
+<div class="flex-1">
+<h4 class="font-bold text-emerald-900 mb-1">AI Recommendation</h4>
+<p class="text-sm text-emerald-800/80 leading-relaxed max-w-2xl">Based on your current investment trajectory, you are expected to unlock the <span class="font-bold">"Circular Pioneer"</span> badge in 14 days. Boosting your allocation in sustainable waste management could accelerate this by 5 days.</p>
+</div>
+<button class="hidden lg:block px-6 py-3 bg-white border border-emerald-200 text-emerald-700 font-bold rounded-xl text-sm hover:bg-emerald-50 transition-colors shadow-sm">
+          Optimize Portfolio
+        </button>
+</section>
+</div>
+</main>
+<!-- Floating Action Button -->
+<button class="fixed bottom-8 right-8 w-14 h-14 bg-primary text-on-primary rounded-full shadow-2xl flex items-center justify-center group hover:scale-110 active:scale-95 transition-all z-50">
+<span class="material-symbols-outlined text-2xl">add</span>
+<div class="absolute right-full mr-4 px-3 py-2 bg-slate-900 text-white text-xs font-bold rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+      Add New Activity
+    </div>
+</button>
+</body></html>

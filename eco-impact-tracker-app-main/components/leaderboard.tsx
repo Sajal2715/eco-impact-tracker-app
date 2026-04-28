@@ -81,7 +81,7 @@ export function Leaderboard() {
             </thead>
             <tbody className="divide-y divide-slate-100">
               {leaderboard.map((entry) => {
-                const isUser = entry.userId === user.id
+                const isUser = entry.user.id === user.id
                 // Render rank UI
                 let rankUI = null
                 if (entry.rank === 1) {
@@ -96,26 +96,26 @@ export function Leaderboard() {
 
                 // Render badge UI based on score
                 let scoreBadge = null
-                if (entry.score >= 95) scoreBadge = <span className="px-2 py-0.5 bg-emerald-100 text-emerald-800 text-[10px] rounded uppercase">A+</span>
-                else if (entry.score >= 90) scoreBadge = <span className="px-2 py-0.5 bg-emerald-100 text-emerald-800 text-[10px] rounded uppercase">A</span>
-                else if (entry.score >= 85) scoreBadge = <span className="px-2 py-0.5 bg-secondary-container text-on-secondary-container text-[10px] rounded uppercase">B+</span>
-                else if (entry.score >= 80) scoreBadge = <span className="px-2 py-0.5 bg-secondary-container text-on-secondary-container text-[10px] rounded uppercase">B</span>
+                if (entry.greenScore >= 950) scoreBadge = <span className="px-2 py-0.5 bg-emerald-100 text-emerald-800 text-[10px] rounded uppercase">A+</span>
+                else if (entry.greenScore >= 900) scoreBadge = <span className="px-2 py-0.5 bg-emerald-100 text-emerald-800 text-[10px] rounded uppercase">A</span>
+                else if (entry.greenScore >= 850) scoreBadge = <span className="px-2 py-0.5 bg-secondary-container text-on-secondary-container text-[10px] rounded uppercase">B+</span>
+                else if (entry.greenScore >= 800) scoreBadge = <span className="px-2 py-0.5 bg-secondary-container text-on-secondary-container text-[10px] rounded uppercase">B</span>
                 else scoreBadge = <span className="px-2 py-0.5 bg-surface-container-highest text-on-surface-variant text-[10px] rounded uppercase">C</span>
 
                 return (
-                  <tr key={entry.userId} className={isUser ? "bg-emerald-50/50 hover:bg-emerald-50 transition-colors group border-y-2 border-emerald-500/20" : "hover:bg-emerald-50/30 transition-colors group"}>
+                  <tr key={entry.user.id} className={isUser ? "bg-emerald-50/50 hover:bg-emerald-50 transition-colors group border-y-2 border-emerald-500/20" : "hover:bg-emerald-50/30 transition-colors group"}>
                     <td className="px-6 py-5 text-center">
                       {rankUI}
                     </td>
                     <td className="px-6 py-5">
                       <div className="flex items-center gap-4">
                         <div className={`w-10 h-10 rounded-lg flex items-center justify-center font-bold font-mono-data ${isUser ? 'bg-primary text-on-primary' : 'bg-primary-container text-white'}`}>
-                          {entry.name.substring(0, 2).toUpperCase()}
+                          {entry.user.name.substring(0, 2).toUpperCase()}
                         </div>
                         <div>
                           <div className="flex items-center gap-2">
                             <p className={`font-bold transition-colors ${isUser ? 'text-primary' : 'text-primary group-hover:text-emerald-800'}`}>
-                              {entry.name}
+                              {entry.user.name}
                             </p>
                             {isUser && <span className="text-[9px] bg-primary-container text-on-primary-container px-1.5 rounded uppercase font-black">You</span>}
                           </div>
@@ -125,12 +125,12 @@ export function Leaderboard() {
                     </td>
                     <td className="px-6 py-5 text-right font-mono-data font-bold text-primary">
                       <div className="inline-flex items-center gap-2">
-                        {(entry.score / 10).toFixed(1)}
+                        {(entry.greenScore / 10).toFixed(1)}
                         {scoreBadge}
                       </div>
                     </td>
                     <td className="px-6 py-5 text-right font-mono-data text-surface-variant">
-                      {formatCO2(entry.score * 0.15)} {/* Mock CO2 saved based on score */}
+                      {formatCO2(entry.co2Saved)}
                     </td>
                     <td className="px-6 py-5 text-center">
                       {entry.rank === 1 ? (
